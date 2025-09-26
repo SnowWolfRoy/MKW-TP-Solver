@@ -15,7 +15,7 @@ using System.Runtime.Intrinsics.Arm;
 
 internal class Program
 {
-    static string path = @"D:\Programs\MK.txt";
+    //static string path = @"D:\Programs\MK.txt";
 
     // enum as placeholder values for each course ID
     enum TrackID
@@ -447,14 +447,14 @@ internal class Program
         // display the final result with the shortest time
         Console.WriteLine(message);
 
-        File.WriteAllText(path, message);
+        //File.WriteAllText(path, message);
         // display all final results for validation
         Console.WriteLine("\nAll Results: " + results.Count);
-        File.AppendAllText(path, ("\n\nAll Results: " + results.Count) + "\n");
+        //File.AppendAllText(path, ("\n\nAll Results: " + results.Count) + "\n");
         foreach (Results r in results)
         {
             Console.WriteLine(r.tracks + "Rainbow Road" + ": " + r.time + " seconds\n");
-            File.AppendAllText(path, (r.tracks + "Rainbow Road" + ": " + r.time + " seconds\n\n"));
+            //File.AppendAllText(path, (r.tracks + "Rainbow Road" + ": " + r.time + " seconds\n\n"));
         }
 
     }
@@ -478,6 +478,7 @@ internal class Program
          */
 
         // alternate method of predicting route, by attempting to get the best split from all of the remaining tracks and adding together
+        // this method was faster but didn't produce 
         /*
         int remainingBestTime = 0;
         foreach (TrackID ID in tracksLeft) 
